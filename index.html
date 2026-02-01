@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <form id="addBookForm">
+        
+        <input type="text" id="titleInput" placeholder="Enter Title" required>
+        <input type="text" id="authorInput" placeholder="Enter Author Name" required>
+        <select id="statusInput" required>
+            <option value="finished">Finished</option>
+            <option value="planToRead">Plan to Read</option>
+            <option value="reading">Reading</option>
+        </select>
+
+        <button type="submit" id="addBookButton">Submit</button>
+
+    </form>
+</body>
+</html>
