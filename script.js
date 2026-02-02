@@ -45,8 +45,27 @@ form.addEventListener("submit", (e) => {
 // function to iterate over the library,
 // so that it can be shown in web page
 function myLibraryIterator() {
+    document.getElementById("contentDiv").innerHTML = "";
     for (let bookObject of myLibrary) {
-        const booktitle = document.querySelector(".title");
-        booktitle.innerHTML = bookObject.title;
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const title = document.createElement("p");
+        title.classList.add("title");
+        title.textContent = bookObject.title;
+
+        const author = document.createElement("p");
+        author.classList.add("author");
+        author.textContent = bookObject.author;
+
+        const status = document.createElement("p");
+        status.classList.add("status");
+        status.textContent = bookObject.status;
+
+        card.append(title, author, status);
+        
+        document.getElementById("contentDiv").append(card);
+
     }
 }
