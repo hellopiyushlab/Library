@@ -48,6 +48,14 @@ function myLibraryIterator() {
     document.getElementById("contentDiv").innerHTML = "";
     for (let bookObject of myLibrary) {
 
+        // DOM manipulation, adding the cards, and
+        // and the content inside them
+
+        // <div class="card"> 
+        //      <p class="title"></p> 
+        //      <p class="author"></p> 
+        //      <p class="status"></p> 
+        // </div>
         const card = document.createElement("div");
         card.classList.add("card");
 
