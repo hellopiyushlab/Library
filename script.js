@@ -27,6 +27,9 @@ function addBookToLibrary() {
     // push the new object into the myLibrary array
     myLibrary.push(newBook);
 
+    // call the iterator function to show on screen
+    myLibraryIterator();
+
     // logging the array in console
     console.log(myLibrary);
 }
@@ -42,5 +45,8 @@ form.addEventListener("submit", (e) => {
 // function to iterate over the library,
 // so that it can be shown in web page
 function myLibraryIterator() {
-
+    for (let bookObject of myLibrary) {
+        const booktitle = document.querySelector(".title");
+        booktitle.innerHTML = bookObject.title;
+    }
 }

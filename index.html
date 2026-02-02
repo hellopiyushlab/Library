@@ -8,20 +8,26 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <form id="addBookForm">
-        
-        <input type="text" id="titleInput" placeholder="Enter Title" required>
-        <input type="text" id="authorInput" placeholder="Enter Author Name" required>
-        <select id="statusInput" required>
-            <option value="finished">Finished</option>
-            <option value="planToRead">Plan to Read</option>
-            <option value="reading">Reading</option>
-        </select>
-
-        <button type="submit" id="addBookButton">Submit</button>
-
-    </form>
+    <!-- div for the form, can be popup, can be on page -->
+    <div id="formDiv">
+        <form id="addBookForm">
+            <input type="text" id="titleInput" placeholder="Enter Title" required>
+            <input type="text" id="authorInput" placeholder="Enter Author Name" required>
+            <select id="statusInput" required>
+                <option value="finished">Finished</option>
+                <option value="planToRead">Plan to Read</option>
+                <option value="reading">Reading</option>
+            </select>
+            <button type="submit" id="addBookButton">Submit</button>
+        </form>
+    </div>
+    
     <!-- following div is to show content in prototype -->
-    <div class="content"></div>
+    <div class="content">
+        <h1>Books</h1>
+        <h2 class="title"></h2>
+        <h3 class="author"></h3>
+        <h4 class="status"></h4>
+    </div>
 </body>
 </html>
