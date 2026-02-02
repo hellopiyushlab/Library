@@ -9,31 +9,34 @@ function Book(title, author, status) {
     this.title = title;
     this.author = author;
     this.status = status;
+    this.UUID = self.crypto.randomUUID(); // generate UUID for each book
 }
 
 // main function to invoke the constructor, and
 // add the objects to the Array
 function addBookToLibrary() {
-    // this will need a click event
-    // take parameters, create a book then store it in the array
-}
+    
+    // get all the input elements
+    const titleInput = document.getElementById("titleInput");
+    const authorInput = document.getElementById("authorInput");
+    const statusInput = document.getElementById("statusInput");
 
-// getting the form element, and its sub elements
-const form = document.getElementById("addBookForm");
-const titleInput = document.getElementById("titleInput");
-const authorInput = document.getElementById("authorInput");
-const statusInput = document.getElementById("statusInput");
-
-// the event listener is on the form itself for submission
-form.addEventListener("submit", (e) => {
-    e.preventDefault(); // avoid reloading the page here
     // use the user input to make the object:
     const newBook = new Book(titleInput.value, authorInput.value, statusInput.value); 
+
     // push the new object into the myLibrary array
     myLibrary.push(newBook);
 
-    // just for checking for myself:
+    // logging the array in console
     console.log(myLibrary);
+}
+
+
+const form = document.getElementById("addBookForm");
+// the event listener is on the form itself for submission
+form.addEventListener("submit", (e) => {
+    e.preventDefault();     // avoid reloading the page here
+    addBookToLibrary();    // call the function
 });
 
 // function to iterate over the library,
