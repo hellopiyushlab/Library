@@ -51,13 +51,28 @@ function myLibraryIterator() {
         // DOM manipulation, adding the cards, and
         // and the content inside them
 
-        // <div class="card"> 
-        //      <p class="title"></p> 
-        //      <p class="author"></p> 
-        //      <p class="status"></p> 
+        // <div class="card">
+        //      <div class="cardContent"> 
+        //          <p class="title"></p>   
+        //          <p class="author"></p> 
+        //          <p class="status"></p>
+        //      </div>
+        //      <div class="cardOptions">
+        //          <i class="deleteIcon"></i>
+        //      </div> 
         // </div>
         const card = document.createElement("div");
         card.classList.add("card");
+
+        const cardContent = document.createElement("div");
+        cardContent.classList.add("cardContent");
+        const cardOptions = document.createElement("div");
+        cardOptions.classList.add("cardOptions");
+
+        const deleteOption = document.createElement("i");
+        deleteOption.classList.add("deleteIcon", "fa-solid", "fa-trash");
+        deleteOption.id = bookObject.UUID;
+        
 
         const title = document.createElement("p");
         title.classList.add("title");
@@ -71,9 +86,25 @@ function myLibraryIterator() {
         status.classList.add("status");
         status.textContent = bookObject.status;
 
-        card.append(title, author, status);
-        
+        cardContent.append(title, author, status);
+        cardOptions.append(deleteOption);
+        card.append(cardContent, cardOptions);
         document.getElementById("contentDiv").append(card);
 
     }
+}
+
+document.getElementById("contentDiv").addEventListener("click", (e) => {
+    if (e.target.classList.contains("deleteIcon")) {
+        const uuid = e.target.id;
+        deleteBookFromLibrary(uuid);
+    }
+});
+
+function deleteBookFromLibrary(UUID) {
+    const indexToDelete = myLibrary.findIndex(obj => obj.UUID === UUID);
+    if (indexToDelete !== -1) {
+        myLibrary.splice(indexToDelete, 1);
+    }
+    myLibraryIterator();
 }
