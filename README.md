@@ -1,37 +1,69 @@
-# Library Application
+# 📚 My Library App  
 
-A client-side web application for managing a personal reading list. The application allows users to add book entries, toggle reading status, and remove items from the collection.
+A simple and clean **Library Management App** built as part of **The Odin Project** curriculum.  
+![Library App Screenshot](Assets/screenshot.png)
 
-![Application Screenshot](./Assets/screenshot.png)
+---
+## 🚀 Live Demo  
 
-## Overview
+👉 [Live Demo](https://hellopiyushlab.github.io/Library/)  
 
-This project implements a basic "My Library" interface using vanilla JavaScript. It demonstrates DOM manipulation, event handling, and object-oriented programming principles (specifically constructor functions) to manage application state.
+---
+This project helped me practice:
 
-## Features
+✅ JavaScript objects & arrays  
+✅ DOM manipulation  
+✅ Event delegation  
+✅ CSS Grid & Flexbox  
+✅ Basic app state handling  
 
-* **Book Management:** Users can input a book's title, author, and current reading status.
-* **Dynamic Rendering:** Book cards are generated dynamically and appended to the DOM upon submission.
-* **Status Toggling:** Clicking the status badge on a book card cycles through the available states ("Plan to Read", "Reading", "Finished").
-* **Deletion:** Entries can be removed from the library via the delete icon.
-* **Responsive Layout:** Utilizes CSS Grid and Flexbox for a responsive grid of cards.
+---
 
-## Technical Details
+## 🧠 Features  
 
-* **Technologies:** HTML5, CSS3, JavaScript (ES6+).
-* **State Management:** Data is stored in a volatile global array (`myLibrary`). Data does not persist across page reloads.
-* **Identification:** Uses `crypto.randomUUID()` to assign unique identifiers to book objects for accurate DOM targeting during update and delete operations.
-* **Styling:** Custom CSS implementing a pastel gradient background and glassmorphism effects using `rgba` transparency.
-* **Dependencies:**
-    * FontAwesome (Icons)
-    * Google Fonts (Roboto, Nunito)
+✨ Add new books with title, author, and status  
+✨ Display books as responsive cards  
+✨ Change reading status by clicking on it  
+✨ Delete books instantly  
+✨ Clean UI with gradient background  
+✨ Fixed footer with GitHub link  
 
-## Setup and Usage
+---
 
-1.  Clone the repository.
-2.  Ensure the `assets` folder contains the required image resources.
-3.  Open `index.html` in a modern web browser.
+## 🛠️ Built With  
 
-## To-Do
+- HTML5  
+- CSS3 (Flexbox + Grid)  
+- JavaScript (Vanilla JS)  
+- Font Awesome Icons  
 
-* add database option
+---
+
+## 📚 What I Learned  
+
+- How to use **constructor functions** to create objects  
+- Storing and managing data in an **array of objects**  
+- Updating UI by iterating over data  
+- Using **event bubbling & delegation** efficiently  
+- Handling form submission without page reload  
+- Creating reusable DOM elements with JS  
+
+---
+
+## 📝 To-Do  
+
+- [ ] Add localStorage support (save books on refresh) 
+- [ ] Add cloud database support 
+- [ ] Add edit book title/author feature  
+- [ ] Add search/filter functionality  
+- [ ] Improve mobile responsiveness  
+- [ ] Add animations for adding/removing cards  
+- [ ] Dark mode 🌙  
+
+---
+
+## 🎯 Part of  
+
+This project is part of **The Odin Project - JavaScript Course**  
+
+---
