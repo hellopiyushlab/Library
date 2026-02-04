@@ -1,12 +1,10 @@
 # 📚 My Library App  
 
 A simple and clean **Library Management App** built as part of **The Odin Project** curriculum.  
+
 ![Library App Screenshot](Assets/screenshot.png)
 
----
-## 🚀 Live Demo  
-
-👉 [Live Demo](https://hellopiyushlab.github.io/Library/)  
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge)](https://hellopiyushlab.github.io/Library/)
 
 ---
 This project helped me practice:
