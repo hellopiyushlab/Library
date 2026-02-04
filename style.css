@@ -1,12 +1,24 @@
 body {
+    box-sizing: border-box;
     margin: 0px;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, #a9caff 0.000%, #b8cbff 16.667%, #d3cbff 33.333%, #f0c8f9 50.000%, #ffc5f1 66.667%, #ffc0ec 83.333%, #ffbaec 100.000%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 #formDiv {
+    box-sizing: border-box;
     width: 100%;
-    height: 10%;
-    background-color: white;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,24 +28,26 @@ body {
     height: fit-content;
     display: grid;
     padding: 20px;
-    /* box-sizing: border-box; */
-
+    box-sizing: border-box;
     grid-template-columns: repeat(auto-fill, 400px);
     grid-template-rows: repeat(auto-fill, 200px);
     grid-auto-rows: 200px;
     gap: 20px;
     justify-content: center;
-
-    background-color: rgb(211, 211, 211);
+    flex: 1;
+    padding-bottom: 45px;
 }
 .card {
-    border: solid black 2px;
     padding: 10px;
+    padding-left: 25px;
+    padding-bottom: 25px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    border: solid white 4px;
 }
 
 #titleInput, #authorInput, #statusInput, #addBookButton {
@@ -43,23 +57,97 @@ body {
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid white 2px;
     cursor: pointer;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 20px;
+}
+#addBookButton {
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: background-color 0.2s ease;
+}
+#addBookButton:hover {
+    background-color: #ffbaebb7;
+}
+#titleInput, #authorInput, #statusInput {
+    margin-right: 10px;
 }
 .cardOptions {
     height: 20%;
     display: flex;
     align-items: center;
-    /* background-color: white; */
-}
-.deleteIcon {
-    height: 100%;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: end;
+    justify-content: flex-end;
+    padding-bottom: 25px;
 }
 .status {
     cursor: pointer;
     user-select: none;
+    font-size: 14px;
+    width: 110px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(180deg, #a9caff 0.000%, #b8cbff 16.667%, #d3cbff 33.333%, #f0c8f9 50.000%, #ffc5f1 66.667%, #ffc0ec 83.333%, #ffbaec 100.000%) border-box;
+ }
+
+.footer {
+    height: 35px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1000; /* sits above cards/content */
+
+    margin-top: 50px;
+}
+.footerText {
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.githubIcon {
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.title {
+    color: #333333;
+    font-size: 22px;
+    margin-bottom: 0px;
+}
+.author {
+    color: #718096;
+    font-size: 14px;
+}
+
+.deleteIcon {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    color: #7d8a9e6e;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.deleteIcon:hover {
+  color: #F56565; /* Warning Red */
 }
