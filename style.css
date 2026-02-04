@@ -59,3 +59,7 @@ body {
     display: flex;
     align-items: end;
 }
+.status {
+    cursor: pointer;
+    user-select: none;
+}

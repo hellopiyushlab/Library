@@ -80,11 +80,12 @@ function myLibraryIterator() {
 
         const author = document.createElement("p");
         author.classList.add("author");
-        author.textContent = bookObject.author;
+        author.textContent = `by ${bookObject.author}`;
 
         const status = document.createElement("p");
         status.classList.add("status");
         status.textContent = bookObject.status;
+        status.id = bookObject.UUID;
 
         cardContent.append(title, author, status);
         cardOptions.append(deleteOption);
@@ -99,6 +100,10 @@ document.getElementById("contentDiv").addEventListener("click", (e) => {
         const uuid = e.target.id;
         deleteBookFromLibrary(uuid);
     }
+    if (e.target.classList.contains("status")) {
+        const uuid = e.target.id;
+        editStatus(uuid);
+    }
 });
 
 function deleteBookFromLibrary(UUID) {
@@ -107,4 +112,25 @@ function deleteBookFromLibrary(UUID) {
         myLibrary.splice(indexToDelete, 1);
     }
     myLibraryIterator();
+}
+
+function editStatus(UUID) {
+    const possibleStatus = ['Reading', 'Plan to Read', 'Finished'];
+    const index = myLibrary.findIndex(obj => obj.UUID === UUID);
+    if (index !== -1) {
+        switch (myLibrary[index].status) {
+            case "Plan to Read":
+                myLibrary[index].status = possibleStatus[0];
+                break;
+            case "Reading":
+                myLibrary[index].status = possibleStatus[2];
+                break;
+            case "Finished":
+                myLibrary[index].status = possibleStatus[1];
+                break;
+            default: 
+                myLibrary[index].status = possibleStatus[1];
+        }
+        myLibraryIterator();
+    }
 }
